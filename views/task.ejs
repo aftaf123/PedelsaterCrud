@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Task Details</title>
+</head>
+<body>
+  <div class="task-details-container">
+    <h1 class="task-details-container-h1">Your Task Title: <span class="task-name"><%= task.title %></span></h1>
+    <p class="task-desc">Brief Description: <%= task.description %></p>
+    <p class="task-due-date">Due Date: <%= task.dueDate.toDateString() %></p>
+    <a href="/tasks/edit/<%= task._id %>" class="btn">Edit Task</a>
+    <form action="/tasks/delete/<%= task._id %>" method="POST" style="display:inline;">
+      <button type="submit" class="delete-btn">Delete Task</button>
+    </form>
+    <a href="/" class="btn">Back to Home Page</a>
+  </div>
+  <script src="/js/scripts.js"></script>
+</body>
+</html>

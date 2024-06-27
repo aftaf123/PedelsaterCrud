@@ -1,0 +1,405 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root variables */
+:root {
+  --primary-color: #8490ff;
+  --secondary-color: #212121;
+  --bg: #fff;
+  --text-color: #333;
+  --bg-gray: #f2f2f2;
+  --header-green-color: #36ed22;
+}
+
+/* Base styles */
+html {
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Header styles */
+.header {
+  padding: 1.6rem 4.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1d1a;
+  box-shadow: 0px 0px 20px 0px rgba(132, 144, 255, 0.2);
+  width: 100%;
+  height: 10vh;
+}
+
+.header img {
+  height: 30px;
+  padding-top: 8px;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-lists {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-lists li {
+  margin-right: 20px;
+}
+
+.navbar-lists li:last-child {
+  margin-right: 0;
+}
+
+.navbar-link {
+  color: #fff;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.icon {
+  display: none;
+}
+
+.navbar-lists li:nth-child(1) i {
+  color: rgb(221, 228, 215);
+}
+
+.navbar-lists li:nth-child(2) i {
+  color: rgb(240, 237, 64);
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    width: 100%;
+    margin: 5rem auto;
+    padding: 20px;
+    background: var(--bg);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  
+}
+
+h1 {
+  text-align: center;
+  color: #23d923;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+}
+
+/* List styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+  flex-grow: 1;
+}
+
+li a:hover {
+  text-decoration: underline;
+  color: #1bf346;
+}
+
+li form {
+  display: inline;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+/* Button styles */
+.button {
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+}
+
+.delete-btn {
+  width: 100%;
+  padding: 10px;
+  background: #23d923;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.add-task-btn{
+  width: 100%;
+  padding: 10px;
+  background: #23d923;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.add-task-btn:hover {
+  background: #fff;
+  color: #23d923;
+  border: 2px solid #23d923;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  width: 90px;
+  height: 40px;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.view-details-btn {
+  background-color: #2ecc71;
+  width: 100px;
+  height: 40px;
+}
+
+.view-details-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  li a {
+    font-size: 16px;
+  }
+
+  li button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .icon {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    flex-direction: row-reverse;
+  }
+
+  .navbar-lists {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #3beb2b;
+    width: 100%;
+    padding-top: 10px;
+    z-index: 998;
+  }
+
+  .navbar-lists.responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-lists.responsive li {
+    margin: 10px 0;
+  }
+
+  .navbar-link {
+    padding: 10px 20px;
+  }
+
+  .navbar-link i {
+    display: none;
+  }
+}
+
+/* Image and title styles */
+.PedalStart-img {
+  width: 100%;
+  height: 75vh;
+  object-fit: cover;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  color: #1bf346;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  animation: img-blink 2s infinite alternate;
+}
+
+@keyframes img-blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* Task section styles */
+#your-task {
+  padding: 4rem 0;
+}
+
+#your-task h2 {
+  text-align: center;
+  color: #23d923;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.task-details-container{
+  max-width: 600px;
+  width: 100%;
+  margin: 5rem auto;
+  padding: 30px;
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.task-details-container-h1{
+  color: #2539e7;
+}
+
+.task-name{
+  color: rgb(237, 11, 230);
+}
+
+
+.task-desc{
+  font-size: 20px;
+  color: #181918;
+  margin-left: 10rem;
+}
+
+.task-due-date{
+  font-size: 20px;
+  color: #2310f2;
+  margin-left: 10rem;
+}
+.update-task-btn{
+  width: 100%;
+  padding: 10px;
+  background: #23d923;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+.task-icon{
+  padding-left: 10px;
+  color: #1bf346;
+  font-size: 20px;
+}
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  color: #fff;
+  height: 10vh;
+}
